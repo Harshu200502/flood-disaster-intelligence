@@ -1,4 +1,6 @@
+
 from pathlib import Path
+import re
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -14,7 +16,7 @@ def load_knowledge():
     if not KNOWLEDGE_DIR.exists():
         raise FileNotFoundError("The knowledge folder does not exist.")
 
-    for path in KNOWLEDGE_DIR.iterdir():
+    for path in sorted(KNOWLEDGE_DIR.iterdir()):
         if path.suffix.lower() == ".txt":
             text = path.read_text(encoding="utf-8").strip()
 
@@ -40,25 +42,37 @@ def load_knowledge():
 
 
 def split_into_chunks(text, chunk_size=120, overlap=25):
-    """Split text into overlapping word chunks."""
-    words = text.split()
+    """Split text by topic headings before making word chunks."""
+    sections = re.split(
+        r"(?m)(?=^TOPIC:\s*)",
+        text
+    )
+
     chunks = []
-    start = 0
 
-    while start < len(words):
-        end = min(start + chunk_size, len(words))
-        chunks.append(" ".join(words[start:end]))
+    for section in sections:
+        section = section.strip()
 
-        if end == len(words):
-            break
+        if not section:
+            continue
 
-        start = end - overlap
+        words = section.split()
+        start = 0
+
+        while start < len(words):
+            end = min(start + chunk_size, len(words))
+            chunks.append(" ".join(words[start:end]))
+
+            if end == len(words):
+                break
+
+            start = end - min(overlap, chunk_size - 1)
 
     return chunks
 
 
 def build_index():
-    """Build a TF-IDF search index from the knowledge files."""
+    """Build a TF-IDF search index from knowledge files."""
     documents = load_knowledge()
     chunks = []
 
@@ -71,8 +85,8 @@ def build_index():
 
     if not chunks:
         raise ValueError(
-            "No knowledge documents found. Add a text file "
-            "to the knowledge folder."
+            "No knowledge documents found. Add a non-empty "
+            "text or PDF file to the knowledge folder."
         )
 
     vectorizer = TfidfVectorizer(
@@ -90,20 +104,28 @@ def build_index():
 
 def retrieve(query, vectorizer, matrix, chunks, top_k=3):
     """Retrieve the most relevant knowledge chunks."""
+    if not query or not query.strip():
+        return []
+
     query_vector = vectorizer.transform([query])
     scores = cosine_similarity(query_vector, matrix).ravel()
-    ranked_indices = scores.argsort()[::-1][:top_k]
+    ranked_indices = scores.argsort()[::-1]
 
     results = []
 
     for index in ranked_indices:
         score = float(scores[index])
 
-        if score > 0:
-            results.append({
-                "source": chunks[index]["source"],
-                "text": chunks[index]["text"],
-                "score": round(score, 3)
-            })
+        if score <= 0:
+            continue
+
+        results.append({
+            "source": chunks[index]["source"],
+            "text": chunks[index]["text"],
+            "score": round(score, 3)
+        })
+
+        if len(results) >= top_k:
+            break
 
     return results
