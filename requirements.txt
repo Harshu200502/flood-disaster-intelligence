@@ -1,0 +1,7 @@
+
+scikit-learn
+pymupdf
+python-dotenv
+requests
+streamlit
+google-genai
