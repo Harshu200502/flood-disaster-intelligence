@@ -20,16 +20,22 @@ Satellite-derived flood extent, rainfall measurements and population exposure es
 
 TOPIC: Official NDMA Reference
 
-**Organization:** National Disaster Management Authority (NDMA), Government of India  
-**Portal:** https://sachet.ndma.gov.in/  
-**Source page provided:** https://sachet.ndma.gov.in/DosDont  
-**Source type:** Official disaster alert and preparedness portal  
-**Access date:** 10 October 2026
+Organization: National Disaster Management Authority (NDMA), Government of India
 
-### Portal role
+Portal: https://sachet.ndma.gov.in/
+
+Source page: https://sachet.ndma.gov.in/DosDont
+
+Source type: Official disaster alert and preparedness portal
+
+Access date: 10 October 2026
+
+Portal role:
+
 The SACHET portal disseminates area-specific disaster alerts from authorized alert-generating agencies and State/UT Disaster Management Authorities. It provides disaster-specific Do's and Don'ts and supports multiple Indian languages.
 
-### Source guidance — Cyclone section
+Source guidance - Cyclone section:
+
 The supplied portal text lists the following cyclone-related guidance:
 
 - Identify nearby safe high ground or a safe shelter and the safest route when a storm-surge, tide, or flooding warning is issued.
@@ -37,9 +43,14 @@ The supplied portal text lists the following cyclone-related guidance:
 - Evacuate to safe places when directed by government officials.
 - Keep animals untied to support their safety during a cyclone.
 
-**Scope limitation:** These points were supplied under the portal's Cyclone section. Do not label them as a dedicated flood-safety checklist without verifying the corresponding flood-specific guidance.
+Scope limitation:
 
-### Use in the flood-disaster project
+These points were supplied under the portal's Cyclone section. Do not present them as a dedicated flood-safety checklist without verifying the corresponding flood-specific guidance.
+
+Use in the flood-disaster project:
+
 Use this portal as a reference for checking current official alerts and locating relevant disaster-specific guidance. This static knowledge-base entry is not a live alert feed.
 
-**Safety note:** The project's generated reports are decision-support outputs, not official disaster alerts. Follow current instructions from authorized authorities.
+Safety note:
+
+The project's generated reports are decision-support outputs, not official disaster alerts. Follow current instructions from authorized authorities.
