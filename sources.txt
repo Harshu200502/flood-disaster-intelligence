@@ -1,0 +1,19 @@
+FLOOD RISK ENGINE — DATA SOURCES
+
+1. Historical flood extent reference
+Source: National Remote Sensing Centre (NRSC), ISRO
+Event: Heavy rains and flooding in Kerala, July 2018
+Map date: 20 July 2018
+Satellite image date: 16 July 2018
+Event ID: 5-FL-2018-KERALA
+URL: https://ndem.nrsc.gov.in/documents/Disaster_Document/2018/KL/klheavyrains50dsc16072018/klheavyrains50dsc16072018_map.pdf
+
+Note: This is a preliminary flood-inundation map, not a numerical flood mask used by the current prototype.
+
+2. Rainfall reference
+Source: India Meteorological Department (IMD), Kochi
+Observation: Highest 24-hour rainfall of 230.8 mm on 16 July 2018
+URL: https://city.imd.gov.in/citywx/extreme/JUL/kochi2.htm
+
+3. Prototype data disclaimer
+Flood area, exposed population, and critical infrastructure values in the current prototype are illustrative assumptions, not verified historical measurements. The risk score and thresholds are provisional and have not been scientifically validated.
