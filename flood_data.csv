@@ -1,0 +1,2 @@
+event,location,event_date,flood_area_km2,rainfall_mm,population_exposed,critical_infrastructure_affected,data_status,flood_area_score,rainfall_score,population_score,infrastructure_score,risk_score,risk_category
+"Kerala floods, July 2018",Ernakulam,2018-07-16,10.0,230.0,10000,5,ILLUSTRATIVE SCENARIO - NOT OBSERVED DATA,10.0,76.66666666666667,10.0,10.0,26.67,Moderate
