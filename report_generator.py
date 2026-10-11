@@ -118,7 +118,7 @@ RETRIEVED GUIDANCE:
         client = genai.Client(api_key=api_key)
 
         response = client.models.generate_content(
-            model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
+            model=os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite"),
             contents=prompt,
         )
 
@@ -138,12 +138,13 @@ RETRIEVED GUIDANCE:
         }
 
 
-    except Exception as exc:
+    except Exception:
         result = fallback_report(
             scenario_data, risk_result, retrieved_guidance
         )
         result["warning"] += (
-            f" API request failed: {type(exc).__name__}: {exc}"
+            " Gemini report generation failed. "
+            "Check the API configuration and application logs."
         )
         return result
 
