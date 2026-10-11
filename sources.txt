@@ -16,4 +16,65 @@ Observation: Highest 24-hour rainfall of 230.8 mm on 16 July 2018
 URL: https://city.imd.gov.in/citywx/extreme/JUL/kochi2.htm
 
 3. Prototype data disclaimer
-Flood area, exposed population, and critical infrastructure values in the current prototype are illustrative assumptions, not verified historical measurements. The risk score and thresholds are provisional and have not been scientifically validated.
+Flood area, exposed population, and critical infrastructure values in the current prototype are illustrative assumptions, not verified historical measurements. The risk score and thresholds are provisional and have not been scientifically validated.## Risk Engine — Assumptions and Limitations
+
+### 1. Risk indicators and weights
+The prototype uses four indicators:
+- Flooded area score: 30%
+- Rainfall score: 25%
+- Population exposure score: 25%
+- Critical infrastructure affected score: 20%
+
+The weights sum to 1.0 (100%). They are illustrative and have not been scientifically validated.
+
+### 2. Normalization references
+The indicators are scaled to a 0–100 range using these prototype reference values:
+- Flooded area: 100 km²
+- Rainfall: 300 mm
+- Population exposed: 100,000 people
+- Critical infrastructure affected: 50
+
+Values are capped at 100 for the score calculation. These references are assumptions, not official flood-risk thresholds.
+
+### 3. Risk categories
+- Low: score below 25
+- Moderate: score from 25 to below 50
+- High: score from 50 to below 75
+- Critical: score of 75 or above
+
+### 4. Data limitations
+The current Kerala floods, July 2018 scenario uses illustrative example values. Its score of 26.67 is not a validated historical assessment. Reliable, event-specific data should be verified before operational use.
+
+### 5. Intended use
+This is a prototype for decision support and educational testing. It must not replace official warnings, verified measurements, or qualified emergency-response decisions.
+## Risk Engine — Assumptions and Limitations
+
+### 1. Risk indicators and weights
+The prototype uses four indicators:
+- Flooded area score: 30%
+- Rainfall score: 25%
+- Population exposure score: 25%
+- Critical infrastructure affected score: 20%
+
+The weights sum to 1.0 (100%). They are illustrative and have not been scientifically validated.
+
+### 2. Normalization references
+The indicators are scaled to a 0–100 range using these prototype reference values:
+- Flooded area: 100 km²
+- Rainfall: 300 mm
+- Population exposed: 100,000 people
+- Critical infrastructure affected: 50
+
+Values are capped at 100 for the score calculation. These references are assumptions, not official flood-risk thresholds.
+
+### 3. Risk categories
+- Low: score below 25
+- Moderate: score from 25 to below 50
+- High: score from 50 to below 75
+- Critical: score of 75 or above
+
+### 4. Data limitations
+The current Kerala floods, July 2018 scenario uses illustrative example values. Its score of 26.67 is not a validated historical assessment. Reliable, event-specific data should be verified before operational use.
+
+### 5. Intended use
+This is a prototype for decision support and educational testing. It must not replace official warnings, verified measurements, or qualified emergency-response decisions.
