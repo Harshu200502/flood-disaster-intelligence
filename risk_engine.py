@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR / "Data"
+DATA_DIR = BASE_DIR
 
 OUTPUT_FILE = DATA_DIR / "flood_data.csv"
 RISK_OUTPUT = DATA_DIR / "risk_outputs.csv"
